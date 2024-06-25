@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Upload Resume and GitHub Username</title>
+</head>
+<body>
+    <h1>Upload Resume and Enter GitHub Username</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="resume">
+        <input type="text" name="username" placeholder="GitHub Username">
+        <input type="submit" value="Upload">
+    </form>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</body>
+</html>
